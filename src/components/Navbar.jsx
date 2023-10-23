@@ -1,9 +1,28 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { close, hamburgerMenu, lock, logo } from "../assets";
 
 const Navbar = () => {
   const [isMenuDisplayed, setMenuDisplay] = useState(false);
   const toggleMenuDisplay = () => setMenuDisplay(!isMenuDisplayed);
+
+  useEffect(() => {
+    // Function to handle the resize event and control menu display
+    const handleResize = () => {
+      // Check if the window width is medium or larger according to the Tailwind CSS md breakpoint (768px)
+      if (window.innerWidth >= 768) {
+        // Set the menu display to false when the window width is medium or larger
+        setMenuDisplay(false);
+      }
+    };
+
+    // Add an event listener for the 'resize' event and bind it to the handleResize function
+    window.addEventListener("resize", handleResize);
+
+    // Cleanup function to remove the event listener when the component is unmounted
+    return () => {
+      window.removeEventListener("resize", handleResize); // Remove the 'resize' event listener
+    };
+  }, []); // Empty dependency array ensures the effect runs only on mount and unmount
 
   return (
     <div className="w-full h-[80px] bg-white border-b">

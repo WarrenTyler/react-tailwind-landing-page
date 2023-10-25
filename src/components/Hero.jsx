@@ -10,7 +10,9 @@ const Hero = () => {
             START TO SUCCESS
           </p>
           <h1 className="text-5xl md:text-6xl md:leading-[72px] font-semibold py-2">
-            Access To <span className="text-[#20B486]">5000+</span> Courses from <span className="text-[#20B486]">300</span> Instructors & Institutions
+            Access To <span className="text-[#20B486]">5000+</span> Courses from{" "}
+            <span className="text-[#20B486]">300</span> Instructors &
+            Institutions
           </h1>
           <p className="py-2 text-lg text-gray-600">
             Various versions have evolved over the years, sometimes by accident.
@@ -20,6 +22,7 @@ const Hero = () => {
             className="flex justify-between max-w-[700px] py-4 border rounded-md bg-white hero-searchbox-shadow"
           >
             <input
+              id="hero-searchbox"
               type="text"
               className="bg-white"
               placeholder="What do want to learn?"

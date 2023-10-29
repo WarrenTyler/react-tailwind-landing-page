@@ -1,7 +1,6 @@
-import { blogImg1 } from "../assets";
 import StarRating from "./StarRating";
 
-const Card = ({course}) => {
+const Card = ({ course }) => {
   return (
     <div className="bg-white drop-shadow-md rounded-2xl overflow-hidden mx-2 my-4">
       <img src={course.linkImg} alt="" className="w-full h-40 object-cover" />
